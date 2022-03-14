@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959758763394",
+    "project_id": "myproject-a612e",
+    "storage_bucket": "myproject-a612e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959758763394:android:8fff9b9f984c2bc19d3b9b",
+        "android_client_info": {
+          "package_name": "com.kardemmese.greenway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959758763394-bh31efibk8gl8ja1857e69fke8nsd790.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmD9zfXZUaGz0hMOxJD-waEltE45eV0Fw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959758763394-bh31efibk8gl8ja1857e69fke8nsd790.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
