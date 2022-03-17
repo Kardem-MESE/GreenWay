@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/blank1Fragment">
+
+    <fragment
+        android:id="@+id/blank1Fragment"
+        android:name="com.kardemmese.greenway.Blank1Fragment"
+        android:label="fragment_blank1"
+        tools:layout="@layout/fragment_blank1" />
+    <fragment
+        android:id="@+id/blank2Fragment"
+        android:name="com.kardemmese.greenway.Blank2Fragment"
+        android:label="fragment_blank2"
+        tools:layout="@layout/fragment_blank2" />
+    <fragment
+        android:id="@+id/blank3Fragment"
+        android:name="com.kardemmese.greenway.Blank3Fragment"
+        android:label="fragment_blank3"
+        tools:layout="@layout/fragment_blank3" />
+    <fragment
+        android:id="@+id/blank4Fragment"
+        android:name="com.kardemmese.greenway.Blank4Fragment"
+        android:label="fragment_blank4"
+        tools:layout="@layout/fragment_blank4" />
+    <fragment
+        android:id="@+id/blank5Fragment"
+        android:name="com.kardemmese.greenway.Blank5Fragment"
+        android:label="fragment_blank5"
+        tools:layout="@layout/fragment_blank5" />
+</navigation>
