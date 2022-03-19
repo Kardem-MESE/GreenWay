@@ -16,8 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AllList extends AppCompatActivity {
 
     EditText aName;
-    EditText aLatitude;
-    EditText aLongitude;
+    EditText aAddress;
+    EditText aCountry;
     Button btnsave;
 
 
@@ -28,8 +28,8 @@ public class AllList extends AppCompatActivity {
         setContentView(R.layout.activity_all_list);
 
         aName = findViewById(R.id.editTextTextPersonName5);
-        aLatitude = findViewById(R.id.editTextTextPersonName3);
-        aLongitude = findViewById(R.id.editTextTextPersonName4);
+        aAddress = findViewById(R.id.editTextTextPersonName3);
+        aCountry = findViewById(R.id.editTextTextPersonName4);
         btnsave= findViewById(R.id.btnsave);
 
 
@@ -46,10 +46,11 @@ public class AllList extends AppCompatActivity {
 
     }
     private void  insertAdvertsData(){
-        String lat = aLatitude.getText().toString();
-        String lon = aLongitude.getText().toString();
+        String add = aAddress.getText().toString();
+        String coun = aCountry.getText().toString();
 
-        Adverts adverts = new Adverts(lat,lon);
+
+        Adverts adverts = new Adverts(add,coun);
 
         mapDbref.push().setValue(adverts);
         Toast.makeText(AllList.this,"Data inserted!",Toast.LENGTH_SHORT).show();

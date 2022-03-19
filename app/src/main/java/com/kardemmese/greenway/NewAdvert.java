@@ -14,8 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class NewAdvert extends AppCompatActivity {
 
-    EditText aMarketName;
-    EditText aProductName;
+    EditText aMarketandProductName;
+    EditText aTypeandQuantity;
     Button btncont;
 
     DatabaseReference AdvertDbref;
@@ -24,8 +24,8 @@ public class NewAdvert extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_advert);
 
-        aMarketName = findViewById(R.id.editTextTextPersonName);
-        aProductName = findViewById(R.id.editTextTextPersonName2);
+        aMarketandProductName = findViewById(R.id.editTextTextPersonName);
+        aTypeandQuantity= findViewById(R.id.editTextTextPersonName2);
         btncont = findViewById(R.id.button2);
 
         AdvertDbref = FirebaseDatabase.getInstance().getReference().child("Adverts");
@@ -41,8 +41,8 @@ public class NewAdvert extends AppCompatActivity {
 
     }
     private void  insertAdvertsData(){
-        String Mname = aMarketName.getText().toString();
-        String Pname = aProductName.getText().toString();
+        String Mname = aMarketandProductName.getText().toString();
+        String Pname = aTypeandQuantity.getText().toString();
 
         Adverts adverts = new Adverts(Mname,Pname);
 
