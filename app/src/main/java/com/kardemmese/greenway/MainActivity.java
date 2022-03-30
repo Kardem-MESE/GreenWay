@@ -36,9 +36,6 @@ private Toolbar toolbar;
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, 0,0);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        View baslik = navigationView.inflateHeaderView(R.layout.navigation_baslik);
-        TextView textViewBaslik= baslik.findViewById(R.id.textViewBaslik);
-        textViewBaslik.setText("Merhaba");
     }
 
     @Override
