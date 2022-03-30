@@ -3,6 +3,7 @@ package com.kardemmese.greenway;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -20,66 +21,68 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText aEmail, aPassword;
-    Button aLoginBtn;
+    EditText aEmail,aPassword;
+    Button aLoignBtn;
     TextView aCreateBtn;
     FirebaseAuth aAuth;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        aEmail = findViewById(R.id.inputEmail);
-        aPassword = findViewById(R.id.inputPassword);
+        aEmail = findViewById(R.id.Email);
+        aPassword = findViewById(R.id.Password);
         aAuth = FirebaseAuth.getInstance();
-        aLoginBtn = findViewById(R.id.btnlogin);
-        aCreateBtn = findViewById(R.id.button3);
+        aLoignBtn = findViewById(R.id.btnLogin);
+        aCreateBtn = findViewById(R.id.LoginHereText);
 
-        aLoginBtn.setOnClickListener(new View.OnClickListener() {
+        aLoignBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String inputEmail = aEmail.getText().toString().trim();
-                String inputPassword = aPassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(inputEmail)){
-                    aEmail.setError("Email is required.");
+                String email = aEmail.getText().toString().trim();
+                String password = aPassword.getText().toString().trim();
+
+                if(TextUtils.isEmpty(email)){
+                    aEmail.setError("You must enter an Email.");
                     return;
                 }
-                if(TextUtils.isEmpty(inputPassword)){
-                    aPassword.setError("Password is required.");
+                if(TextUtils.isEmpty(password)){
+                    aPassword.setError("You must enter an password");
                     return;
                 }
-                if(inputPassword.length() < 6){
-                    aPassword.setError("Password Must be >= characters.");
+                if(password.length() < 6){
+                    aPassword.setError("Your password mus be at least 6 character long.");
                     return;
                 }
-                aAuth.signInWithEmailAndPassword(inputEmail,inputPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+                //authenticate the user
+
+                aAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this,"Logged in Successfully.",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+                        if(task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Logged in succefcully.", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), Blank1Fragment.class));
                         }else{
-                            Toast.makeText(LoginActivity.this,"Error!" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error !!!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
+
                     }
                 });
             }
         });
+
         aCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });
-    }
-    public void login(View view) {
-        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-        startActivity(intent);
-    }
 
-    public void signup(View view) {
-        Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-        startActivity(intent);
     }
 }
