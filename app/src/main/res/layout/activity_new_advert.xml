@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="48dp"
-        android:text="Market Name:"
+        android:text="Market and Product Name:"
         android:textColor="#8BC34A"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:text="Product Name and Quantity:"
+        android:text="Product Type and Quantity:"
         android:textColor="#8BC34A"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +61,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Enter:"
+        android:hint="Enter(raw/packed):"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -92,4 +92,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
